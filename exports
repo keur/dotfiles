@@ -37,6 +37,7 @@ case "$OSTYPE" in
         export DIST=$(grep -hoP '^ID=\K\w+$' /etc/*-release)
         ;;
     darwin*)
+        export DIST=macos
         # use gnu utils instead of bsd
         export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
         export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"

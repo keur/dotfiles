@@ -9,12 +9,20 @@
     ~/.tmux.conf:
       path: tmux.conf
       force: true
-    ~/.vim: vim
-    ~/.vimrc:
-      path: vimrc
-      force: true
     ~/.config/nvim/init.vim:
       path: config/nvim/init.vim
+      create: true
+      force: true
+    ~/.config/nvim/colors/luna.vim:
+      path: config/nvim/colors/luna.vim
+      create: true
+      force: true
+    ~/.config/nvim/colors/luna-term.vim:
+      path: config/nvim/colors/luna-term.vim
+      create: true
+      force: true
+    ~/.vim/bundle/Vundle.vim:
+      path: config/nvim/Vundle.vim
       create: true
       force: true
     ~/.profile:
@@ -47,7 +55,6 @@
     ~/.dircolors: dircolors
     ~/.exports: exports
     ~/.functions: functions
-    ~/.extras: extras
     ~/.gitconfig: gitconfig
     ~/.antigen.zsh: antigen.zsh
 

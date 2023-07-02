@@ -1,5 +1,5 @@
 # My Dotfiles
 
 ```bash
-bash <(wget -o /dev/null -O- https://raw.githubusercontent.com/keur/dotfiles/master/get.sh)
+bash <(curl -H 'Cache-Control: no-cache' https://raw.githubusercontent.com/keur/dotfiles/main/get.sh)
 ```

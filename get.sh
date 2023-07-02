@@ -1,5 +1,5 @@
 #!/bin/bash -eu
-TARGET=https://github.com/kkuehler/dotfiles.git
+TARGET=https://github.com/keur/dotfiles.git
 DEST="$HOME/dotfiles"
 
 if [ ! -d "$DEST" ]; then
@@ -8,14 +8,15 @@ if [ ! -d "$DEST" ]; then
     cd "$DEST"
 else
     cd "$DEST"
-    git pull origin master
+    if [[ -z $(git status -s) ]]; then
+      git pull origin master
+    fi
 fi
 
 ./install
-scripts/ocf.sh
-cd ..
 
-echo
-echo "Installing vim plugins..."
-vim +PluginInstall +qall
-echo
+command -v nvim >/dev/null 2>&1
+if [[ $? -eq 0 ]]; then
+  echo "Installing neovim plugins!"
+  nvim --headless +PluginInstall +qall
+fi

@@ -5,6 +5,10 @@ for cfg in ~/.{aliases,exports,functions,extras}; do
    [[ -r "$cfg" ]] && source "$cfg"
 done
 
+if [[ "$DIST" == "macos" ]]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
 [[  -r /usr/share/nvm/init-nvm.sh ]] && source /usr/share/nvm/init-nvm.sh
 
 autoload -U compinit && compinit
@@ -17,3 +21,4 @@ antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-autosuggestions
 antigen theme ys
 antigen apply
+
