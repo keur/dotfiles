@@ -1,0 +1,44 @@
+# As god intended
+export EDITOR=/usr/bin/vim
+export VISUAL=/usr/bin/vim
+
+# Golang
+export GOROOT=/usr/lib/go
+export GOPATH=$HOME/gopath
+export GO111MODULE=on
+export PATH=$PATH:$GOPATH/bin
+export PATH=/usr/local/go/bin:$PATH
+
+# Rust
+export PATH=$PATH:$HOME/.cargo/bin
+
+# Emacs (deprecated)
+export PATH=$PATH:$HOME/.emacs.d/bin
+
+# Custom scripts and per user binaries
+export PATH=$PATH:$HOME/.local/bin
+export PATH=$PATH:$HOME/scripts
+
+# Chromium
+export PATH="${PATH}:/opt/depot_tools"
+
+# ripgrep & fzf
+export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
+export FZF_DEFAULT_COMMAND='fd --type f' # make fzf in vim use .gitignore
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+# Disable for zsh
+#export PS1="\[\e[0;49;31m\][\[\e[0;49;32m\]\u\[\e[0;49;33m\]@\[\e[0;49;36m\]\h \[\e[0;39;35m\]\W\[\e[0;49;31m\]]\[\e[0;49;37m\]\\$ \[$(tput sgr0)\]"
+
+# Set $DIST for use in ~/.functions
+case "$OSTYPE" in
+    linux*)
+        # set my disto env variable
+        export DIST=$(grep -hoP '^ID=\K\w+$' /etc/*-release)
+        ;;
+    darwin*)
+        # use gnu utils instead of bsd
+        export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+        export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+        ;;
+esac

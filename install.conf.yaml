@@ -1,0 +1,55 @@
+- defaults:
+    link:
+      relink: true
+
+- clean: ['~']
+
+- link:
+    ~/.dotfiles: ''
+    ~/.tmux.conf:
+      path: tmux.conf
+      force: true
+    ~/.vim: vim
+    ~/.vimrc:
+      path: vimrc
+      force: true
+    ~/.config/nvim/init.vim:
+      path: config/nvim/init.vim
+      create: true
+      force: true
+    ~/.profile:
+      path: profile
+      force: true
+    ~/.bashrc:
+      path: bashrc
+      force: true
+    ~/.zshrc:
+      path: zshrc
+      force: true
+    ~/.config/sway/config:
+      path: config/sway/config
+      create: true
+    ~/.config/i3status/config:
+      path: config/i3status/config
+      create: true
+    ~/.config/systemd/user:
+      path: config/systemd/user
+      create: true
+      force: true
+      recursive: true
+    ~/.ripgreprc:
+      path: ripgreprc
+      force: true
+    ~/.Xdefaults:
+      path: Xdefaults
+      force: true
+    ~/.aliases: aliases
+    ~/.dircolors: dircolors
+    ~/.exports: exports
+    ~/.functions: functions
+    ~/.extras: extras
+    ~/.gitconfig: gitconfig
+    ~/.antigen.zsh: antigen.zsh
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]

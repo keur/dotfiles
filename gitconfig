@@ -1,0 +1,23 @@
+[user]
+	email = kevin.kuehler@gmail.com
+	name = Kevin Kuehler
+[push]
+	default = current
+[core]
+	editor = vim
+	excludesfile = ~/.gitignore
+	whitespace = trailing-space,space-before-tab
+[color]
+	ui = true
+[diff]
+	tool = vimdiff
+[merge]
+    tool = vimdiff
+[difftool]
+	prompt = false
+[mergetool]
+	prompt = false
+[apply]
+	whitespace = fix
+[pull]
+	rebase = true

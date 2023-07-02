@@ -1,0 +1,73 @@
+!! --[ URxvt - General ]-------------------------------------
+URxvt.intensityStyles: false
+URxvt.loginShell:false
+URxvt.scrollBar:false
+URxvt.saveLines:5000
+URxvt.font: xft:Fira Code:style=Retina:pixelsize=16:antialias=true:hinting=true:hintstyle=hintfull
+URxvt.boldFont: xft:Fira Code:style=Retina:pixelsize=16:antialias=true:hinting=true:hintstyle=hintfull
+URxvt.internalborder: 0
+URxvt.visualBell: false
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+URxvt.scrollWithBuffer: true
+URxvt.scrollTtyOutput: false
+URxvt.scrollTtyKeypress: true
+URxvt.letterSpace: -1
+URxvt.keysym.Control-Shift-V: eval:paste_clipboard
+URxvt.keysym.Control-Shift-C: eval:selection_to_clipboard
+
+!
+!! --[ URxvt - Resize Font ]--------------------------------
+!! git: https://github.com/simmel/urxvt-resize-font
+!! AUR: https://aur.archlinux.org/packages/urxvt-resize-font-git/
+urxvt.perl-ext-common: default,resize-font
+
+!
+!! --[ URxvt - URL/Clipboard Handling ]----------------------
+URxvt.perl-ext-common:      default,matcher,url-select,keyboard-select
+URxvt.url-launcher:         /usr/bin/xdg-open
+URxvt.matcher.button:       1
+URxvt.keysym.M-u:           perl:url-select:select_next
+URxvt.url-select.launcher:  xdg-open
+URxvt.url-select.underline: true
+URxvt.keysym.M-Escape:      perl:keyboard-select:activate
+URxvt.keysym.M-s:           perl:keyboard-select:search
+
+!
+!! --[ URxvt - Theme ]----------------------------------------
+! special
+*.foreground:   #e6e1dc
+*.background:   #2b2b2b
+*.cursorColor:  #e6e1dc
+
+! black
+*.color0:       #2b2b2b
+*.color8:       #5a647e
+
+! red
+*.color1:       #da4939
+*.color9:       #da4939
+
+! green
+*.color2:       #a5c261
+*.color10:      #a5c261
+
+! yellow
+*.color3:       #ffc66d
+*.color11:      #ffc66d
+
+! blue
+*.color4:       #6d9cbe
+*.color12:      #6d9cbe
+
+! magenta
+*.color5:       #b6b3eb
+*.color13:      #b6b3eb
+
+! cyan
+*.color6:       #519f50
+*.color14:      #519f50
+
+! white
+*.color7:       #e6e1dc
+*.color15:      #f9f7f3

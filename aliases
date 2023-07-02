@@ -1,0 +1,69 @@
+# Unset annoying defaults
+unset gs # ghostscript
+
+# Standard aliases
+alias df='df -h'
+alias du='du -h'
+alias v='nvim'
+alias vim='nvim'
+alias s='/usr/bin/sudo'
+alias cls='/usr/bin/clear'
+alias py='/usr/bin/python'
+alias ctagsr='ctags -R .'
+alias xclip="xclip -selection c"
+alias dlvl="dlv --listen 127.0.0.1:4000 --headless exec "
+alias dlvc="dlv connect 127.0.0.1:4000"
+alias mvenv="python3 -m venv venv"
+alias iperf="iperf3"
+alias lsofv4="lsof -i4 -n -P"
+alias info="info --vi-keys"
+
+# git
+alias ga="git add"
+alias gau="git add -u"
+alias gaa="git add -A"
+alias gp="git push"
+alias gpf="git push --force-with-lease"
+alias gpff="git push --force"
+alias gc="git commit -v"
+alias gcs="git commit -v -S"
+alias gpu="git pull"
+alias gpr="git pull --rebase"
+alias gd="git diff -M"
+alias gdc="git diff --cached -M"
+alias gdh="git diff -M HEAD"
+alias gl="git log --decorate --pretty=fuller"
+alias gs="git status"
+alias gm="git merge"
+alias gb="git branch -vv"
+alias gba="git branch -a -vv"
+alias gch="git checkout"
+alias gcl="git clean -d -n"
+alias gcp="git cherry-pick"
+alias gun="git checkout -- ."
+alias gclone="git clone"
+alias git-diff-p0="git diff --no-prefix" # patch -p0 compatible
+
+# school
+alias d186="docker run -v /home/keur/school/cs186:/cs186 -it cs186/environment bash"
+
+# work
+alias brave-vpn="nmcli connection up --ask --show-secrets wg0"
+alias chrome-py='export PATH=$(realpath .):$PATH'
+
+# ocf stuff
+alias ocfs='ssh keur@supernova.ocf.berkeley.edu'
+alias phost='ssh -L 8443:printhost:443 keur@supernova.ocf.berkeley.edu'
+alias ocfv='ssh keur@virus.ocf.berkeley.edu'
+alias ocfp="ssh -tt keur@supernova.ocf.berkeley.edu 'ssh puppet'"
+alias ocfm="ssh -tt keur@supernova.ocf.berkeley.edu 'ssh mirrors'"
+
+# extras
+alias gambit="mosh keur@23.239.23.104"
+alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+alias nyan='telnet nyancat.dakko.us'
+alias wee='/usr/bin/weechat'
+alias dotfetch='bash <(wget -o /dev/null -O- https://raw.githubusercontent.com/kkuehler/dotfiles/master/get.sh)'
+alias showports='lsof -Pan -i tcp -i udp'
+alias cleanmosh='pgrep -u "$USER" mosh-server | tr ' ' '\n' | grep -v "$PPID" | xargs kill'
+alias staticmirror='wget --mirror --convert-links --adjust-extension --page-requisites --no-parent'
