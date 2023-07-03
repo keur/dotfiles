@@ -245,7 +245,7 @@
 	<key>name</key>
 	<string>gruvbox</string>
 	<key>shellExitAction</key>
-	<integer>2</integer>
+	<integer>1</integer>
 	<key>type</key>
 	<string>Window Settings</string>
 </dict>
